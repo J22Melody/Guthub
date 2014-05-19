@@ -1,0 +1,26 @@
+<h2>Edit Recipe</h2>
+
+<form ng-submit="save()">
+    <label for="title">Title:</label>
+    <input ng-model="recipe.title" id="title" focus />
+
+    <label for="description">Description:</label>
+    <input ng-model="recipe.description" id="description" />
+
+    <label for="ingredients">Ingredients:</label>
+    <ul id="ingredients" ng-controller="IngredientsCtrl">
+        <li ng-repeat="ingredient in recipe.ingredients">
+            <input ng-model="ingredient.ingredientName" placeholder="ingredient name" /> 
+            <input ng-model="ingredient.amount"  placeholder="amount" />
+            <input ng-model="ingredient.amountUnits" placeholder="amount unit" />
+            <button type="button" ng-click="removeIngredient($index)">Delete</button>
+        </li>
+        <button type="button" ng-click="addIngredient()">Add</button>
+    </ul>
+
+    <label for="instructions">Instructions:</label>
+    <textarea ng-model="recipe.instructions" id="instructions"></textarea>
+
+    <button>Save</button>
+</form>
+

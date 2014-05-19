@@ -1,0 +1,19 @@
+<h2>{{recipe.title}}</h2>
+
+<div>{{recipe.description}}</div>
+
+<h3>Ingredients</h3>
+<ul>
+    <li ng-repeat="ingredient in recipe.ingredients">
+        <span>{{ingredient.amount}}</span>
+        <span>{{ingredient.amountUnits}}</span>
+        <span>{{ingredient.ingredientName}}</span>
+    </li>
+</ul>
+
+<h3>Instructions</h3>
+<div>{{recipe.instructions}}</div>
+
+<a ng-href="#/edit/{{recipe._id}}">Edit</a>
+<button ng-click="delete()">Delete</button>
+
