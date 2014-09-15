@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 
 app.use(require('body-parser')()); 
+app.use(static(__dirname + '/app/'));
  
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
